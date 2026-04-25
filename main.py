@@ -2,7 +2,7 @@ from flask import Flask, render_template_string, request, jsonify, redirect, ses
 import firebase_admin
 from firebase_admin import credentials, db
 import requests
-#import google.generativeai as genai
+import google.generativeai as genai
 from datetime import datetime
 import os
 import json
