@@ -17,6 +17,10 @@ def add_security_headers(response):
 
 # ================== Firebase Admin ==================
 firebase_json = os.environ.get("FIREBASE_KEY")
+
+if not firebase_json:
+    raise ValueError("❌ Missing FIREBASE_KEY env")
+
 cred = credentials.Certificate(json.loads(firebase_json))
 firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://bunhin-60375-default-rtdb.asia-southeast1.firebasedatabase.app'
